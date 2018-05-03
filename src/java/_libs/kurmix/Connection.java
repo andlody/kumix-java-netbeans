@@ -73,9 +73,9 @@ public class Connection {
             ResultSetMetaData rsmd = tabla.getMetaData();
             
             int n = rsmd.getColumnCount();
-            ArrayList<String[]> a=new ArrayList<>();
+            ArrayList<String[]> a=new ArrayList<String[]>();
             while(tabla.next()){  
-                ArrayList<String> b=new ArrayList<>();
+                ArrayList<String> b=new ArrayList<String>();
                 for (int i = 0; i < n; i++) {
                     b.add(tabla.getString(i+1));
                 }

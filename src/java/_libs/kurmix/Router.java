@@ -89,7 +89,7 @@ public class Router extends HttpServlet {
             }catch (Exception e) { 
                String[] er = {"102",action,controller,e.toString()}; 
                method = o.getClass().getMethod("setKurmix",null);
-               if(!(boolean)method.invoke(o,null)) u.setKurmix(er); 
+               if(!(Boolean)method.invoke(o,null)) u.setKurmix(er); 
                return"";
             }
         }catch(Exception e){ 
