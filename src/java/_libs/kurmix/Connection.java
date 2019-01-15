@@ -67,11 +67,12 @@ public class Connection {
                 
                 query.executeUpdate(); 
                 String bb = "0";
-                try (ResultSet generatedKeys = query.getGeneratedKeys()) {
+                try{
+                    ResultSet generatedKeys = query.getGeneratedKeys();
                     if (generatedKeys.next()) {
                         bb = ""+generatedKeys.getInt(1);
                     }
-                }
+                }catch(Exception e){}
                 String aux[][] = {{""+bb}};
                 return aux;
             }catch (Exception ex) {
